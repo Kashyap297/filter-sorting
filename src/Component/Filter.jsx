@@ -56,23 +56,23 @@ const Filter = ({ users, setUsers }) => {
         setSortOrder(newSortOrder)
     }
 
-    const handleCategoryChange = (e) =>{
+    const handleCategoryChange = (e) => {
         const value = e.target.value
 
         setSelectedCategory(value)
         // const termData = value === '--Term--' ? lists : lists.filter(item => item.status === value) 
         // setLists(termData)
         let filterStatus;
-        if(value === 'Term'){
-            filterStatus = lists;
-        }else if(value === "Yearly"){
-            filterStatus = lists.filter(item => item.status === value);
-        }else if(value === "Quarterly"){
-            filterStatus = lists.filter(item => item.status === value);
-        }else if(value === "Monthly"){
-            filterStatus = lists.filter(item => item.status === value);
-        }else{
-            filterStatus = lists;
+        if (value === 'Term') {
+            filterStatus = initData;
+        } else if (value === "Yearly") {
+            filterStatus = initData.filter(item => item.status === value);
+        } else if (value === "Quarterly") {
+            filterStatus = initData.filter(item => item.status === value);
+        } else if (value === "Monthly") {
+            filterStatus = initData.filter(item => item.status === value);
+        } else {
+            filterStatus = initData;
         }
         setLists(filterStatus)
     }
